@@ -4,8 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home work #1</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="container">
+      <div class="interface">
+        <h2>Примеры фраз (их можно скопировать в поля ниже)</h2>
+        <p class="one">мама мыла раму</p>
+        <p class="two">собака друг человека</p>
+        <textarea
+          class="message1"
+          placeholder="Введите строку вашего текста"
+        ></textarea>
+        <textarea
+          class="message2"
+          placeholder="Введите строку вашего текста"
+        ></textarea>
+
+        <p>Введите букву, которая будет расчитана в ваших сообщениях</p>
+        <input
+          class="input js-input"
+          type="text"
+          placeholder="Введите одну букву"
+          maxlength="1"
+        />
+
+        <p class="message">Результат</p>
+      </div>
+    </div>
     <script src="./main.js" type="module"></script>
   </body>
 </html>
