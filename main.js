@@ -28,23 +28,7 @@ function getRow(inputValue) {
 
   const result = countWordOfRow1 > countWordOfRow2 ? row1 : row2;
 
-  if (inputValue) {
-    if (countWordOfRow1 && countWordOfRow2) {
-      if (countWordOfRow1 === countWordOfRow2) {
-        console.log("равное к-во раз");
-        refs.message.textContent = `В каждом сообщение буква "${inputValue}" встречается равное количество раз`;
-      } else {
-        console.log(2);
-        refs.message.textContent = `Вы ввели букву "${inputValue}", которая встречается в первом сообщении ${countWordOfRow1} раз и во втором сообщении - ${countWordOfRow2} раз. Поэтому, во фразе "${result}" данная буква встречается боле чаще!`;
-      }
-    } else if (countWordOfRow1 || countWordOfRow2) {
-      refs.message.textContent = `Буква "${inputValue}" представлена только в предложении - "${result}"`;
-    } else {
-      refs.message.textContent = `Буква "${inputValue}" в ваших сообщениях не встречается`;
-    }
-  } else {
-    refs.message.textContent = "Результат";
-  }
+  renderMessage(inputValue, result, countWordOfRow1, countWordOfRow2);
 }
 
 function getCountWordInRow(row, inputValue) {
@@ -55,4 +39,22 @@ function getCountWordInRow(row, inputValue) {
     }
   }
   return result;
+}
+
+function renderMessage(inputValue, result, countWordOfRow1, countWordOfRow2) {
+  if (inputValue) {
+    if (countWordOfRow1 && countWordOfRow2) {
+      if (countWordOfRow1 === countWordOfRow2) {
+        refs.message.textContent = `В каждом сообщение буква "${inputValue}" встречается равное количество раз`;
+      } else {
+        refs.message.textContent = `Вы ввели букву "${inputValue}", которая встречается в первом сообщении ${countWordOfRow1} раз и во втором сообщении - ${countWordOfRow2} раз. Поэтому, во фразе "${result}" данная буква встречается боле чаще!`;
+      }
+    } else if (countWordOfRow1 || countWordOfRow2) {
+      refs.message.textContent = `Буква "${inputValue}" представлена только в предложении - "${result}"`;
+    } else {
+      refs.message.textContent = `Буква "${inputValue}" в ваших сообщениях не встречается`;
+    }
+  } else {
+    refs.message.textContent = "Результат";
+  }
 }
