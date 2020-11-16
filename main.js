@@ -5,33 +5,40 @@ const refs = {
   message: document.querySelector(".message"),
 };
 
-refs.input.addEventListener("input", require);
+refs.input.addEventListener("input", handlerInput);
 
-function require() {
-  const row1 = refs.row1.value;
-  const row2 = refs.row2.value;
-  if (row1 && row2) {
-    getRow();
+function handlerInput() {
+  require(getValueData());
+}
+
+function getValueData() {
+  const data = {
+    row1: refs.row1.value.toLowerCase(),
+    row2: refs.row2.value.toLowerCase(),
+    inputValue: refs.input.value.toLowerCase(),
+  };
+  return data;
+}
+
+function require(data) {
+  if (data.row1 && data.row2) {
+    getRowMatch(data);
   } else {
-    alert("Вы не ввели сообщения");
+    alert("Вы не ввели сообщения в соответствующие поля");
     refs.input.value = "";
   }
 }
 
-function getRow() {
-  const row1 = refs.row1.value.toLowerCase();
-  const row2 = refs.row2.value.toLowerCase();
-
-  const countWordOfRow1 = getCountWordInRow(row1);
-  const countWordOfRow2 = getCountWordInRow(row2);
+function getRowMatch({ row1, row2, inputValue }) {
+  const countWordOfRow1 = getCountWordInRow(row1, inputValue);
+  const countWordOfRow2 = getCountWordInRow(row2, inputValue);
 
   const result = countWordOfRow1 > countWordOfRow2 ? row1 : row2;
 
-  renderMessage(result, countWordOfRow1, countWordOfRow2);
+  renderMessage(result, countWordOfRow1, countWordOfRow2, inputValue);
 }
 
-function getCountWordInRow(row) {
-  const inputValue = refs.input.value.toLowerCase();
+function getCountWordInRow(row, inputValue) {
   let result = null;
   for (let i = 0; i < row.length; i++) {
     if (row.charAt(i) === inputValue) {
@@ -41,8 +48,7 @@ function getCountWordInRow(row) {
   return result;
 }
 
-function renderMessage(result, countWordOfRow1, countWordOfRow2) {
-  const inputValue = refs.input.value.toLowerCase();
+function renderMessage(result, countWordOfRow1, countWordOfRow2, inputValue) {
   if (inputValue) {
     if (countWordOfRow1 && countWordOfRow2) {
       if (countWordOfRow1 === countWordOfRow2) {
