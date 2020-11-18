@@ -2,7 +2,10 @@ import { character, enemy } from './Hero';
 
 const refs = {
   btn: document.getElementById('btn-kick'),
+  messageOfFight: document.getElementById('messageOfFight'),
 };
+
+refs.messageOfFight.textContent = `Жми на кнопку`;
 
 const init = () => {
   renderHP(character);
@@ -25,7 +28,7 @@ const renderProgressBar = hero => {
 const changeXP = (count, hero) => {
   if (hero.damageHP < count) {
     hero.damageHP = 0;
-    alert(`Персонаж ${hero.name} проиграл`);
+    refs.messageOfFight.textContent = `${hero.name} проиграл`;
     refs.btn.disabled = true;
   } else {
     hero.damageHP -= count;
