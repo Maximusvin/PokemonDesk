@@ -114,7 +114,7 @@ body {
 }
 
 .playground {
-  max-width: 1024px;
+  max-width: 800px;
   display: flex;
   justify-content: space-around;
   margin: 30px auto;
@@ -356,53 +356,16 @@ body {
 }
 
 .button {
-  position: relative;
-  background: white;
-  border: 2px solid #ffc55b;
-  border-radius: 10px;
-  min-height: 30px;
-  vertical-align: middle;
-  padding: 12px 20px;
   outline: none !important;
   cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  background-color: inherit;
+  transition: all 0.2s linear;
 }
 
-.button:after {
-  content: '';
-  position: absolute;
-  left: -5px;
-  right: -5px;
-  top: -5px;
-  bottom: -5px;
-  background: white;
-  border-radius: 13px;
-  z-index: -1;
-  box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.2);
-}
 .button:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ffd78e),
-    to(#ffc55b)
-  );
-  background: linear-gradient(to bottom, #ffd78e, #ffc55b);
-  border-color: white;
-}
-.button:hover:after {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ffd78e),
-    to(#ffc55b)
-  );
-  background: linear-gradient(to bottom, #ffd78e, #ffc55b);
-  box-shadow: 0 0 5px 2px white, 0 0 15px #ffe9c1,
-    0 3px 5px -2px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .candy {
