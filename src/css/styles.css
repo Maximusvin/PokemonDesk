@@ -105,10 +105,10 @@ body {
 
 .control {
   width: 320px;
-  height: 260px;
   position: relative;
   margin: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -366,7 +366,9 @@ body {
   outline: none !important;
   cursor: pointer;
   font-size: 18px;
+  margin-bottom: 30px;
 }
+
 .button:after {
   content: '';
   position: absolute;
