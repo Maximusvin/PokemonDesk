@@ -4,42 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
-
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
-
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <title>Pokemon Fight</title>
   </head>
 
   <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
+    <div class="body">
+      <header>
+        <img
+          class="logo"
+          title="Reset Game"
+          src="./assets/Pokemon_logo.png"
+          alt="Pokemon"
+        />
+      </header>
+      <div class="playground">
+        <div class="pokemon character">
+          <span class="lvl">Lv. 1</span>
 
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
+          <img
+            src="http://sify4321.000webhostapp.com/pikachu.png"
+            class="sprite"
+          />
+
+          <div class="details">
+            <h2 class="name" id="name-character">Pikachu</h2>
+            <div class="hp">
+              <div class="bar">
+                <div
+                  class="health"
+                  id="progressbar-character"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <span class="text" id="health-character">100 / 100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="control">
+          <button class="button" id="btn-kick">Thunder Jolt</button>
+        </div>
+
+        <div class="pokemon enemy">
+          <span class="lvl">Lv. 1</span>
+
+          <img
+            src="http://sify4321.000webhostapp.com/charmander.png"
+            class="sprite"
+          />
+
+          <div class="details">
+            <h2 class="name" id="name-enemy">Charmander</h2>
+            <div class="hp">
+              <div class="bar">
+                <div
+                  class="health"
+                  id="progressbar-enemy"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <span class="text" id="health-enemy">100 / 100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="catch_screen"></div>
   </body>
 </html>
