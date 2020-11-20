@@ -26,7 +26,7 @@ const renderProgressBar = hero => {
 };
 
 const changeXP = (count, hero) => {
-  if (hero.damageHP < count) {
+  if (!hero.damageHP || hero.damageHP < count) {
     hero.damageHP = 0;
     refs.messageOfFight.textContent = `${hero.name} проиграл`;
     refs.btn.disabled = true;
