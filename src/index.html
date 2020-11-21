@@ -22,10 +22,7 @@
         <div class="pokemon character">
           <span class="lvl">Lv. 1</span>
 
-          <img
-            src="http://sify4321.000webhostapp.com/pikachu.png"
-            class="sprite"
-          />
+          <img src="./images/pikachu.png" class="sprite" />
 
           <div class="details">
             <h2 class="name" id="name-character">Pikachu</h2>
@@ -43,19 +40,52 @@
         </div>
 
         <div class="control">
-          <button class="button" id="btn-kick">
-            <img src="./images/b_attack.gif" alt="" />
-          </button>
-          <div id="messageOfFight"></div>
+          <div class="btn-wrap">
+            <div class="controlls attack-label-wrap">
+              <p>Атака</p>
+              <label>
+                <input type="radio" name="attack" />
+                Удар в голову
+              </label>
+              <label>
+                <input type="radio" name="attack" />
+                Удар в корпус
+              </label>
+              <label>
+                <input type="radio" name="attack" />
+                Удар по ногам
+              </label>
+            </div>
+
+            <button class="button" id="btn-kick">
+              <img src="./images/b_attack.gif" alt="" />
+            </button>
+
+            <div class="controlls protection-label-wrap">
+              <p>Защита</p>
+              <label>
+                <input type="radio" name="defense" />
+                Блок головы
+              </label>
+              <label>
+                <input type="radio" name="defense" />
+                Блок корпуса
+              </label>
+              <label>
+                <input type="radio" name="defense" />
+                Блок ног
+              </label>
+            </div>
+          </div>
+
+          <div class="block-vs"></div>
+          <div id="messageOfFight" class="messageOfFight"></div>
         </div>
 
         <div class="pokemon enemy">
           <span class="lvl">Lv. 1</span>
 
-          <img
-            src="http://sify4321.000webhostapp.com/charmander.png"
-            class="sprite"
-          />
+          <img src="./images/charmander.png" class="sprite" />
 
           <div class="details">
             <h2 class="name" id="name-enemy">Charmander</h2>
@@ -73,6 +103,5 @@
         </div>
       </div>
     </div>
-    <div class="catch_screen"></div>
   </body>
 </html>

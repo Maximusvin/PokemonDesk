@@ -77,47 +77,65 @@ input[type='radio'].visually-hidden {
 
 body {
   color: black;
-  position: relative;
-  background: red;
-  background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 0;
   font-family: 'Heebo', sans-serif;
-  background: url('../assets/Parkscene_Background.png') center bottom repeat-x,
-    url('../assets/SkyDay.png') center top / cover;
+  background: url('../images/bg.png');
   text-align: center;
-  user-select: none;
-}
-
-.catch_screen {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
-  position: fixed;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.4;
-}
-
-.control {
-  width: 320px;
-  position: relative;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .playground {
-  max-width: 800px;
+  max-width: 1200px;
   display: flex;
-  justify-content: space-around;
-  margin: 30px auto;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.control {
+  width: 680px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-wrap {
+  background-color: #c5ced5;
+  width: 400px;
+  display: flex;
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controlls p {
+  margin-bottom: 15px;
+}
+
+.controlls label {
+  display: block;
+  text-align: left;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.block-vs {
+  padding: 10px 0;
+  background-color: azure;
+  width: 100%;
+  margin-bottom: 25px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.messageOfFight {
+  text-align: left;
+}
+
+.messageOfFight p {
+  margin-bottom: 10px;
 }
 
 .arrow {
@@ -132,6 +150,7 @@ body {
   transform-origin: right center;
   pointer-events: none;
 }
+
 .arrow svg {
   position: absolute;
   width: 36px;
@@ -181,6 +200,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .pokemon * {
   vertical-align: middle;
 }
@@ -356,16 +376,8 @@ body {
 }
 
 .button {
-  outline: none !important;
   cursor: pointer;
-  margin-bottom: 15px;
   background-color: inherit;
-  transition: all 0.2s linear;
-}
-
-.button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .candy {
